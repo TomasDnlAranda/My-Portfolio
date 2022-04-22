@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react/cjs/react.production.min';
 import styled from 'styled-components';
+import { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
@@ -79,13 +81,73 @@ const SKILLS = styled(NavLink)`
 	z-index: 1;
 `;
 
+const rotate = keyframes`
+from{
+	transform: rotate(0)
+}
+
+to{
+	transform: rotate(360deg)
+}
+
+`;
+
+const Center = styled.button`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	& > :first-child {
+		animation: ${rotate} infinite 1.5s linear;
+	}
+
+	& > :last-child {
+		padding-top: 1rem;
+	}
+`;
+
 const Main = () => {
+	const [click, setClick] = useState(false);
+
+	const handleClick = () => setClick(!click);
+
 	return (
 		<MainContainer>
 			<Container>
 				<PowerButton />
 				<LogoComponent />
 				<SocialIcons />
+				<Center click={click}>
+					<svg
+						onClick={() => handleClick()}
+						width={200}
+						height={200}
+						fill="currentColor"
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fas"
+						data-icon="yin-yang"
+						class="svg-inline--fa fa-yin-yang fa-w-16"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 496 512"
+					>
+						<path
+							fill="currentColor"
+							d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 376c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm0-128c-53.02 0-96 42.98-96 96s42.98 96 96 96c-106.04 0-192-85.96-192-192S141.96 64 248 64c53.02 0 96 42.98 96 96s-42.98 96-96 96zm0-128c-17.67 0-32 14.33-32 32s14.33 32 32 32 32-14.33 32-32-14.33-32-32-32z"
+						></path>
+					</svg>
+					<span>click here</span>
+				</Center>
 				<Contact target="_blank" to={{ pathname: 'mailto:tomasdnlaranda@gmail.com' }}>
 					<h2>Say hi..</h2>
 				</Contact>
