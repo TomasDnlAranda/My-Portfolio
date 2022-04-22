@@ -22,15 +22,15 @@ const Icons = styled.div`
 const Line = styled.span`
 	width: 2px;
 	height: 8rem;
-	background-color: ${(props) => props.theme.text};
+	background-color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
 `;
 
-const SocialIcons = () => {
+const SocialIcons = ({ click }) => {
 	return (
 		<Icons>
 			<div>
 				<NavLink
-					style={{ color: 'inherit' }}
+					style={click ? { color: '#FCF6F4' } : { color: 'inherit' }}
 					target="_blank"
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 				>
@@ -56,7 +56,7 @@ const SocialIcons = () => {
 			</div>
 			<div>
 				<NavLink
-					style={{ color: 'inherit' }}
+					style={click ? { color: '#FCF6F4' } : { color: 'inherit' }}
 					target="_blank"
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 				>
@@ -82,7 +82,7 @@ const SocialIcons = () => {
 			</div>
 			<div>
 				<NavLink
-					style={{ color: 'inherit' }}
+					style={click ? { color: '#FCF6F4' } : { color: 'inherit' }}
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 					target="_blank"
 				>
@@ -107,14 +107,14 @@ const SocialIcons = () => {
 			</div>
 			<div>
 				<NavLink
-					style={{ color: 'inherit' }}
+					style={click ? { color: '#FCF6F4' } : { color: 'inherit' }}
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 					target="_blank"
 				>
 					<AiFillLinkedin style={{ fontSize: '1.5rem' }} />
 				</NavLink>
 			</div>
-			<Line />
+			<Line click={click} />
 		</Icons>
 	);
 };

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Logo = styled.h1`
 	display: inline-block;
-	color: ${(props) => props.theme.text};
+	color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
 	font-family: 'Pacifico', cursive !important;
 
 	position: fixed;
@@ -12,8 +12,8 @@ const Logo = styled.h1`
 	z-index: 3;
 `;
 
-const LogoComponent = () => {
-	return <Logo>TomasDnl</Logo>;
+const LogoComponent = ({ click }) => {
+	return <Logo click={click}>TomasDnl</Logo>;
 };
 
 export default LogoComponent;
