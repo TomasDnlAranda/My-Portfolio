@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 // con en main container le pasamos los estilos por props de styled
 const MainContainer = styled.div`
@@ -28,6 +29,7 @@ const Main = () => {
 		<MainContainer>
 			<Container>
 				<PowerButton />
+				<LogoComponent />
 			</Container>
 		</MainContainer>
 	);
