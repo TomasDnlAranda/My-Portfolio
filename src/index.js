@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
+// normalize
 import '../node_modules/normalize.css';
+// react router dom
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 ReactDOM.render(
