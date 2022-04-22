@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react/cjs/react.production.min';
+import { useState } from 'react/cjs/react.development';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -82,6 +82,7 @@ const SKILLS = styled(NavLink)`
 `;
 
 const rotate = keyframes`
+
 from{
 	transform: rotate(0)
 }
@@ -94,8 +95,8 @@ to{
 
 const Center = styled.button`
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: ${(props) => (props.click ? '85%' : '50%')};
+	left: ${(props) => (props.click ? '92%' : '50%')};
 	transform: translate(-50%, -50%);
 	border: none;
 	outline: none;
@@ -106,12 +107,14 @@ const Center = styled.button`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	transition: all 1s ease;
 	& > :first-child {
 		animation: ${rotate} infinite 1.5s linear;
 	}
 
 	& > :last-child {
 		padding-top: 1rem;
+		display: ${(props) => (props.click ? 'none' : 'inline-block')};
 	}
 `;
 
@@ -129,8 +132,8 @@ const Main = () => {
 				<Center click={click}>
 					<svg
 						onClick={() => handleClick()}
-						width={200}
-						height={200}
+						width={click ? 120 : 200}
+						height={click ? 120 : 200}
 						fill="currentColor"
 						aria-hidden="true"
 						focusable="false"
