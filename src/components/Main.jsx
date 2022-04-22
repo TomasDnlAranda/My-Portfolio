@@ -6,6 +6,9 @@ import { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
+import Intro from './Intro';
+import { motion } from 'framer-motion';
+
 // con en main container le pasamos los estilos por props de styled
 const MainContainer = styled.div`
 	background: ${(props) => props.theme.body};
@@ -164,23 +167,34 @@ const Main = () => {
 					<span>click here</span>
 				</Center>
 				<Contact target="_blank" to={{ pathname: 'mailto:tomasdnlaranda@gmail.com' }}>
-					<h2>Say hi..</h2>
+					<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						Say hi..
+					</motion.h2>
 				</Contact>
 				<BLOG to="/blog">
-					<h2>Blog</h2>
+					<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						Blog
+					</motion.h2>
 				</BLOG>
 				<WORK to="/work" click={click}>
-					<h2>Work</h2>
+					<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						Work
+					</motion.h2>
 				</WORK>
 				<BottomBar>
 					<ABOUT to="/about" click={click}>
-						<h2>About</h2>
+						<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							About
+						</motion.h2>
 					</ABOUT>
 					<SKILLS to="/skills">
-						<h2>My Skills.</h2>
+						<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							My Skills.
+						</motion.h2>
 					</SKILLS>
 				</BottomBar>
 			</Container>
+			{click ? <Intro click={click} /> : null}
 		</MainContainer>
 	);
 };
