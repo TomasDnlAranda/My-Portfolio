@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PowerButton from '../subComponents/PowerButton';
 // con en main container le pasamos los estilos por props de styled
 const MainContainer = styled.div`
 	background: ${(props) => props.theme.body};
@@ -25,7 +26,9 @@ const Container = styled.div`
 const Main = () => {
 	return (
 		<MainContainer>
-			<Container>Maiiin</Container>
+			<Container>
+				<PowerButton />
+			</Container>
 		</MainContainer>
 	);
 };
