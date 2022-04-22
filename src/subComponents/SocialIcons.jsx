@@ -15,7 +15,7 @@ const Icons = styled.div`
 	z-index: 100;
 
 	& > *:not(:last-child) {
-		margin: 0.5rem 0;
+		margin: 0.3rem 0;
 	}
 `;
 
@@ -35,14 +35,14 @@ const SocialIcons = () => {
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 				>
 					<svg
-						width={25}
-						height={25}
+						width={20}
+						height={20}
 						fill="currentColor"
 						aria-hidden="true"
 						focusable="false"
 						data-prefix="fab"
 						data-icon="github"
-						class="svg-inline--fa fa-github fa-w-16"
+						className="svg-inline--fa fa-github fa-w-16"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 496 512"
@@ -61,14 +61,14 @@ const SocialIcons = () => {
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 				>
 					<svg
-						width={25}
-						height={25}
+						width={20}
+						height={20}
 						fill="currentColor"
 						aria-hidden="true"
 						focusable="false"
 						data-prefix="fab"
 						data-icon="twitter"
-						class="svg-inline--fa fa-twitter fa-w-16"
+						className="svg-inline--fa fa-twitter fa-w-16"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -87,13 +87,13 @@ const SocialIcons = () => {
 					target="_blank"
 				>
 					<svg
-						width={25}
-						height={25}
+						width={20}
+						height={20}
 						fill="currentColor"
 						focusable="false"
 						data-prefix="fab"
 						data-icon="facebook"
-						class="svg-inline--fa fa-facebook fa-w-16"
+						className="svg-inline--fa fa-facebook fa-w-16"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -111,7 +111,7 @@ const SocialIcons = () => {
 					to={{ pathname: 'https://github.com/TomasDnlAranda' }}
 					target="_blank"
 				>
-					<AiFillLinkedin style={{ fontSize: '1.8rem' }} />
+					<AiFillLinkedin style={{ fontSize: '1.5rem' }} />
 				</NavLink>
 			</div>
 			<Line />
