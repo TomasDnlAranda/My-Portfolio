@@ -7,6 +7,8 @@ import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
 import Intro from './Intro';
+import { motion } from 'framer-motion';
+
 // con en main container le pasamos los estilos por props de styled
 const MainContainer = styled.div`
 	background: ${(props) => props.theme.body};

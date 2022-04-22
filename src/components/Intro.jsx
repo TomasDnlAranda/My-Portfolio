@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import Me from '../assets/Images/me.png';
 import { motion } from 'framer-motion';
 
-import Me from '../assets/Images/me_png.png';
-
-const Box = styled.div`
+const Box = styled(motion.div)`
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -48,7 +47,7 @@ const SubBox = styled.div`
 	}
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
 	font-size: calc(1em + 1.5vw);
 	color: ${(props) => props.theme.body};
 	padding: 2rem;
@@ -67,18 +66,30 @@ const Text = styled.div`
 
 const Intro = () => {
 	return (
-		<Box>
+		<Box
+			initial={{ height: 0 }}
+			animate={{ height: '55vh' }}
+			transition={{ type: 'spring', duration: 2, delay: 1 }}
+		>
 			<SubBox>
-				<Text>
+				<Text
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1, delay: 2 }}
+				>
 					<h1>Hi,</h1>
 					<h3>I'm Tomas Dnl</h3>
 					<h6>I am a Front-End Web Developer, I make my code simple and beautiful</h6>
 				</Text>
 			</SubBox>
 			<SubBox>
-				<div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1, delay: 2 }}
+				>
 					<img className="pic" src={Me} alt="profile pic" />
-				</div>
+				</motion.div>
 			</SubBox>
 		</Box>
 	);
