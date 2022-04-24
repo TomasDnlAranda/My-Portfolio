@@ -1,6 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 import { darkTheme } from './Themes';
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
@@ -10,6 +12,17 @@ import CardWork from '../subComponents/CardWork';
 import { useRef, useEffect } from 'react';
 import BigTitle from '../subComponents/BigTitle';
 
+const container = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.5,
+			duration: 0.5,
+		},
+	},
+};
+
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
 	height: 400vh;
@@ -18,7 +31,7 @@ const Box = styled.div`
 	align-items: center;
 `;
 
-const Main = styled.ul`
+const Main = styled(motion.ul)`
 	position: fixed;
 	top: 12rem;
 	left: calc(10rem + 15vw);
@@ -61,7 +74,7 @@ const WorkPage = () => {
 				<LogoComponent theme="dark" />
 				<SocialIcons theme="dark" />
 				<PowerButton />
-				<Main ref={ref}>
+				<Main ref={ref} variants={container} initial="hidden" animate="show">
 					{Work.map((item) => (
 						<CardWork key={item.id} item={item} />
 					))}
