@@ -138,13 +138,19 @@ const Main = () => {
 
 	const handleClick = () => setClick(!click);
 
+	const [clickAbout, setClickAbout] = useState(false);
+
+	const handleClickk = () => {
+		setClickAbout(true);
+	};
+
 	return (
 		<MainContainer>
 			<DarkDiv click={click} />
 			<Container>
 				<PowerButton />
 				<LogoComponent click={click} />
-				<SocialIcons click={click} />
+				<SocialIcons click={click} clickAbout={clickAbout} />
 				<Center click={click}>
 					<svg
 						onClick={() => handleClick()}
@@ -182,7 +188,7 @@ const Main = () => {
 					</motion.h2>
 				</WORK>
 				<BottomBar>
-					<ABOUT to="/about" click={click}>
+					<ABOUT to="/about" click={click} onClick={handleClickk}>
 						<motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
 							About
 						</motion.h2>
