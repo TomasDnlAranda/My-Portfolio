@@ -6,6 +6,7 @@ import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
 import ParticulesComponent from '../subComponents/ParticulesComponent';
+import BigTitle from '../subComponents/BigTitle';
 
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
@@ -114,6 +115,8 @@ const MySkillsPage = () => {
 						<p>VScode, Github, Codepen etc.</p>
 					</Description>
 				</Main>
+
+				<BigTitle text="SKILLS" top="80%" right="30%" />
 			</Box>
 		</ThemeProvider>
 	);

@@ -8,13 +8,14 @@ import SocialIcons from '../subComponents/SocialIcons';
 import { Work } from '../data/WorkData';
 import CardWork from '../subComponents/CardWork';
 import { useRef, useEffect } from 'react';
-import { darkTheme as A } from './Themes';
+import BigTitle from '../subComponents/BigTitle';
 
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
 	height: 400vh;
 	align-items: center;
-	overflow: hidden;
+	display: flex;
+	align-items: center;
 `;
 
 const Main = styled.ul`
@@ -23,6 +24,7 @@ const Main = styled.ul`
 	left: calc(10rem + 15vw);
 	height: 40vh;
 	display: flex;
+	z-index: 1;
 
 	color: red;
 `;
@@ -84,6 +86,7 @@ const WorkPage = () => {
 						></path>
 					</svg>
 				</Rotate>
+				<BigTitle text="WORK" top="12.5%" right="20%" />
 			</Box>
 		</ThemeProvider>
 	);

@@ -8,6 +8,7 @@ import SocialIcons from '../subComponents/SocialIcons';
 import ParticulesComponent from '../subComponents/ParticulesComponent';
 import astronaut from '../assets/Images/spaceman.png';
 import { keyframes } from 'styled-components';
+import BigTitle from '../subComponents/BigTitle';
 
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
@@ -81,6 +82,8 @@ const AboutPage = () => {
 					<br />I believe everything is an Art when you put your consciousness in it. You can
 					connect with me via social links.
 				</Main>
+
+				<BigTitle text="ABOUT" top="10%" left="5%" />
 				<SpaceMan>
 					<img src={astronaut} alt="spaceman" />
 				</SpaceMan>
