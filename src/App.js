@@ -14,9 +14,6 @@ import { useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Sound from './subComponents/Sound';
 
-// con una sentencia switch vamos a poner las rutas cuando se redireccione
-// en themeProvider es donde van a estar los temas y los valores que vamos a usar
-// en lightTheme lo exportamos de un componente donde es un objeto con valores y lo usamos en main mediante props
 function App() {
 	const location = useLocation();
 	return (

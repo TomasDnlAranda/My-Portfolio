@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
-import music from '../assets/audio/u-said-it-v13-1167.mp3';
+import music from '../assets/audio/sound.mp3';
 
 const Box = styled.div`
 	display: flex;
@@ -25,6 +25,11 @@ const Box = styled.div`
 	}
 	& > *:nth-child(5) {
 		animation-delay: 0.8s;
+	}
+
+	@media only screen and (max-width: 550px) {
+		top: 7rem;
+		left: 2rem;
 	}
 `;
 
@@ -70,7 +75,7 @@ const Sound = () => {
 			<Line click={click} />
 			<Line click={click} />
 			<Line click={click} />
-			<audio src={music} ref={ref} loop />
+			<audio src={music} ref={ref} loop autoniff />
 		</Box>
 	);
 };

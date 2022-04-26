@@ -1,7 +1,5 @@
-// importamos createGlobalStyle de styledComponents
 import { createGlobalStyle } from 'styled-components';
 
-// guardamos en componente todo los estilos que va a tener globalmente
 const GlobalStyle = createGlobalStyle`
 
 *,*::before,*::after,h1,h2,h3,h4,h5,h6{

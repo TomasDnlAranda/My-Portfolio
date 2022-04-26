@@ -31,6 +31,13 @@ const Power = styled.button`
 		text-decoration: none;
 		color: inherit;
 	}
+
+	@media only screen and (max-width: 550px) {
+		left: 60%;
+	}
+	@media only screen and (max-width: 420px) {
+		left: 85%;
+	}
 `;
 
 const PowerButton = () => {

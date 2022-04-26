@@ -14,6 +14,7 @@ const Box = styled(motion.li)`
 	border-radius: 0 50px 0 50px;
 	flex-direction: column;
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 	border: 2px solid ${(props) => props.theme.body};
 	transition: all 0.2s ease;
@@ -22,6 +23,18 @@ const Box = styled(motion.li)`
 		background-color: ${(props) => props.theme.body};
 		color: ${(props) => props.theme.text};
 		border: 2px solid ${(props) => props.theme.text};
+	}
+
+	@media only screen and (max-width: 600px) {
+		width: 14rem;
+		height: 35vh;
+		top: 2rem;
+	}
+
+	@media only screen and (max-width: 420px) {
+		width: 10.5rem;
+		height: 29.5vh;
+		top: 2rem;
 	}
 `;
 
@@ -72,8 +85,8 @@ const Git = styled(NavLink)`
 	color: inherit;
 	text-decoration: none;
 	${Box}:hover & {
-		&<* {
-			fill: ${(props) => props.theme.text};
+		& > * {
+			color: #fff;
 		}
 	}
 `;
@@ -99,7 +112,7 @@ const CardWork = ({ item }) => {
 			<Description>{description}</Description>
 			<Tags>
 				{tags.map((text, id) => (
-					<Tag key={id}>{text}</Tag>
+					<Tag key={id}>#{text}</Tag>
 				))}
 			</Tags>
 			<Footer>
@@ -110,7 +123,7 @@ const CardWork = ({ item }) => {
 					<svg
 						width={30}
 						height={30}
-						fill="currentColor"
+						color="#000"
 						aria-hidden="true"
 						focusable="false"
 						data-prefix="fab"

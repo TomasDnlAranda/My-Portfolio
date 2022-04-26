@@ -10,6 +10,7 @@ import ParticulesComponent from '../subComponents/ParticulesComponent';
 import astronaut from '../assets/Images/spaceman.png';
 import { keyframes } from 'styled-components';
 import BigTitle from '../subComponents/BigTitle';
+import { motion } from 'framer-motion';
 
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
@@ -20,6 +21,17 @@ const Box = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 `;
+
+const container = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.5,
+			duration: 2.5,
+		},
+	},
+};
 
 const float = keyframes`
 0% {transform: translateY(-10px)}
@@ -41,7 +53,7 @@ const SpaceMan = styled.div`
 	animation: ${float} 4s ease infinite;
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
 	border: 2px solid ${(props) => props.theme.text};
 	color: ${(props) => props.theme.text};
 	padding: 2rem;
@@ -62,6 +74,18 @@ const Main = styled.div`
 
 	font-family: 'Ubutntu Mono', monospace;
 	font-style: italic;
+
+	@media only screen and (max-width: 500px) {
+		top: 14rem;
+		padding: 1rem !important;
+		width: 50vw;
+		height: 45vh !important;
+	}
+
+	@media only screen and (max-width: 400px) {
+		left: 5rem;
+		font-size: calc(0.5rem + 1vw);
+	}
 `;
 
 const AboutPage = () => {
@@ -72,16 +96,17 @@ const AboutPage = () => {
 				<SocialIcons theme="dark" />
 				<PowerButton />
 				<ParticulesComponent theme="dark" />
-				<Main>
-					I'm a front-end developer located in Argentine. I love to create simple yet beautiful
-					websites with great user experience.
+				<Main variants={container} initial="hidden" animate="show">
+					I am a front-end developer located in Argentina, Buenos Aires. I love creating simple but
+					beautiful websites with a great user experience, I challenge myself to grow and learn new
+					techniques every day.
 					<br />
 					<br />
-					I'm interested in the whole frontend stack Like trying new things and building great
-					projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
+					I am interested in the whole frontend stack. I like to try new things and build great
+					projects.
 					<br />
-					<br />I believe everything is an Art when you put your consciousness in it. You can
-					connect with me via social links.
+					<br />I believe that everything is an Art when you put your conscience into it, and it is
+					incredible what can come out of a cup of coffee and passion
 				</Main>
 
 				<BigTitle text="ABOUT" top="10%" left="5%" />

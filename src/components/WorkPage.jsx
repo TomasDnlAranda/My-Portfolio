@@ -26,6 +26,7 @@ const container = {
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
 	height: 400vh;
+	position: relative;
 	align-items: center;
 	display: flex;
 	align-items: center;
@@ -62,7 +63,19 @@ const WorkPage = () => {
 		const rotate = () => {
 			element.style.transform = `translateX(${-window.pageYOffset}px)`;
 
-			yinyang.current.style.transform = `rotate(` + -window.pageYOffset + 'deg)';
+			if (element.style === null) {
+				return element;
+			}
+			if (element.style !== null) {
+				element.style.transform = `translateX(${-window.pageYOffset}px)`;
+			}
+
+			if (yinyang.current === null) {
+				return yinyang;
+			}
+			if (yinyang.current !== null) {
+				yinyang.current.style.transform = `rotate(` + -window.pageYOffset + 'deg)';
+			}
 		};
 		window.addEventListener('scroll', rotate);
 		return () => window.removeEventListener('scroll', rotate);
@@ -88,7 +101,7 @@ const WorkPage = () => {
 						focusable="false"
 						data-prefix="fas"
 						data-icon="yin-yang"
-						class="svg-inline--fa fa-yin-yang fa-w-16"
+						className="svg-inline--fa fa-yin-yang fa-w-16"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 496 512"
@@ -99,7 +112,7 @@ const WorkPage = () => {
 						></path>
 					</svg>
 				</Rotate>
-				<BigTitle text="WORK" top="12.5%" right="20%" />
+				<BigTitle text="WORK" top="12.5%" right="15%" />
 			</Box>
 		</ThemeProvider>
 	);

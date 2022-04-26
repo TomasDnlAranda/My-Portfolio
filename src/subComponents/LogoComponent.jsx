@@ -10,6 +10,10 @@ const Logo = styled.h1`
 	left: 2rem;
 	top: 2rem;
 	z-index: 3;
+
+	@media only screen and (max-width: 550px) {
+		color: ${(props) => props.theme.text};
+	}
 `;
 
 const LogoComponent = ({ click }) => {

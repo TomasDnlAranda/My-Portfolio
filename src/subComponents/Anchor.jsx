@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -66,7 +65,7 @@ const AnchorComponent = ({ numbers }) => {
 					focusable="false"
 					data-prefix="fas"
 					data-icon="anchor"
-					class="svg-inline--fa fa-anchor fa-w-18"
+					className="svg-inline--fa fa-anchor fa-w-18"
 					role="img"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 576 512"
@@ -88,11 +87,10 @@ const AnchorComponent = ({ numbers }) => {
 							width={25}
 							height={25}
 							data-icon="link"
-							class="svg-inline--fa fa-link fa-w-16"
+							className="svg-inline--fa fa-link fa-w-16 chain"
 							role="img"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 512 512"
-							className="chain"
 						>
 							<path
 								fill="currentColor"
@@ -110,7 +108,7 @@ const AnchorComponent = ({ numbers }) => {
 					focusable="false"
 					data-prefix="fas"
 					data-icon="anchor"
-					class="svg-inline--fa fa-anchor fa-w-18"
+					className="svg-inline--fa fa-anchor fa-w-18"
 					role="img"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 576 512"
