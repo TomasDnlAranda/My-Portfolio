@@ -30,6 +30,10 @@ const Box = styled(motion.div)`
 	z-index: 1;
 	border-left: 2px solid ${(props) => props.theme.body};
 	border-right: 2px solid ${(props) => props.theme.text};
+
+	@media only screen and (max-width: 550px) {
+		display: none;
+	}
 `;
 
 const SubBox = styled.div`
@@ -44,6 +48,16 @@ const SubBox = styled.div`
 		transform: translate(-50%, 0%);
 		width: 450px;
 		height: auto;
+	}
+	@media only screen and (max-width: 1000px) {
+		.pic {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 0%);
+			width: 350px;
+			height: auto;
+		}
 	}
 `;
 
@@ -61,6 +75,13 @@ const Text = styled(motion.div)`
 		color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
 		font-size: calc(0.5rem + 1.5vw);
 		font-weight: 300;
+	}
+	@media only screen and (max-width: 1000px) {
+		& > *:last-child {
+			color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
+			font-size: calc(0.5rem + 1.5vw);
+			font-weight: 300;
+		}
 	}
 `;
 

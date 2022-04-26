@@ -6,6 +6,8 @@ import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
 import ParticulesComponent from '../subComponents/ParticulesComponent';
+import BigTitle from '../subComponents/BigTitle';
+import { motion } from 'framer-motion';
 
 const Box = styled.div`
 	background-color: ${(props) => props.theme.body};
@@ -17,14 +19,26 @@ const Box = styled.div`
 	align-items: center;
 `;
 
-const Main = styled.div`
+const container = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.5,
+			duration: 2.5,
+		},
+	},
+};
+
+const Main = styled(motion.div)`
 	border: 2px solid ${(props) => props.theme.text};
 	color: ${(props) => props.theme.text};
 	background-color: ${(props) => props.theme.body};
 	padding: 2rem;
-	width: 30vw;
-	height: 60vh;
+	width: 40vw;
+	height: 65vh;
 	z-index: 3;
+	margin-top: 1.5rem;
 	line-height: 1.5;
 
 	font-family: 'Ubuntu Mono', monospace;
@@ -35,6 +49,10 @@ const Main = styled.div`
 	&:hover {
 		color: ${(props) => props.theme.body};
 		background-color: ${(props) => props.theme.text};
+	}
+
+	@media only screen and (max-width: 550px) {
+		margin-left: 4rem;
 	}
 `;
 
@@ -80,7 +98,7 @@ const MySkillsPage = () => {
 				<SocialIcons theme="light" />
 				<PowerButton />
 				<ParticulesComponent theme="light" />
-				<Main>
+				<Main variants={container} initial="hidden" animate="show">
 					<Title>
 						<svg
 							aria-hidden="true"
@@ -89,7 +107,7 @@ const MySkillsPage = () => {
 							focusable="false"
 							data-prefix="fas"
 							data-icon="laptop-code"
-							class="svg-inline--fa fa-laptop-code fa-w-20"
+							className="svg-inline--fa fa-laptop-code fa-w-20"
 							role="img"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 640 512"
@@ -107,13 +125,15 @@ const MySkillsPage = () => {
 					</Description>
 					<Description>
 						<strong>SKILLS</strong>
-						<p>Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, etc.</p>
+						<p>Html, Css, Js, React, Sass, Bootstrap, Tailwind, Styled Components, etc.</p>
 					</Description>
 					<Description>
 						<strong>Tools</strong>
-						<p>VScode, Github, Codepen etc.</p>
+						<p>VScode, Scrum, Github, Codepen, Git, Npm, Prettier, BEM, etc.</p>
 					</Description>
 				</Main>
+
+				<BigTitle text="SKILLS" top="80%" right="30%" />
 			</Box>
 		</ThemeProvider>
 	);
